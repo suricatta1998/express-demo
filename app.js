@@ -1,10 +1,13 @@
 const express = require('express')
-
 const app = express()
-const port = process.env.PORT || 3000
-const host = process.env.HOST || ''
-app.get('/', (req, res) => {
-	res.send('Hello World!')
+const port = 3000
+
+app.use("/", (req, res) => {
+	res.send("Hello world");
 })
 
-module.exports = app;
+app.listen(port, () => {
+	console.log(`Run at http://localhost:${port}`)
+})
+
+module.exports = app
